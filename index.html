@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Youkai Zhou — software, data, and research. Computer Science graduate student at Drexel University.">
+  <meta name="theme-color" content="#111514">
+  <title>Youkai Zhou — Software, Data &amp; Research</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <header class="site-header">
+      <a class="brand" href="#intro" aria-label="Youkai Zhou, home"><span class="initials">YZ</span><span class="brand-divider" aria-hidden="true">/</span><span>Youkai Zhou</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-resume" href="assets/resume.pdf" download="Youkai-Zhou-Resume.pdf">Resume<span class="sr-only"> (PDF download)</span></a>
+      </nav>
+    </header>
+
+    <main id="main" class="page-body">
+      <section id="intro" class="hero" aria-labelledby="hero-title">
+        <div class="section-index" aria-hidden="true"><span>01</span><span>/</span><span>INTRO</span></div>
+        <img class="hero-wave" src="assets/wave.png" alt="" width="1894" height="830" fetchpriority="high">
+        <h1 id="hero-title">Build.<br>Investigate.</h1>
+        <div class="hero-copy">
+          <p class="intro-line">Youkai Zhou — Software, data, and research.</p>
+          <p class="hero-facts">Drexel University<br>M.S. Computer Science<br>Expected June 2028<br>Philadelphia</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View projects <img class="icon" src="assets/arrow-right.svg" alt=""></a>
+            <a class="button secondary" href="assets/resume.pdf" download="Youkai-Zhou-Resume.pdf">Download resume <img class="icon" src="assets/download.svg" alt=""><span class="sr-only"> (PDF)</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects" aria-labelledby="projects-title">
+        <div class="section-index" aria-hidden="true"><span>02</span><span>/</span><span>PROJECTS</span></div>
+        <p class="eyebrow">Selected work</p>
+        <h2 id="projects-title">Three connected research projects<br class="desktop-break"> at the intersection of data and software.</h2>
+
+        <article class="project" aria-labelledby="stock-title">
+          <div class="project-heading"><span class="project-number" aria-hidden="true">01 /</span><h3 id="stock-title">Stock<br class="desktop-break"> Prediction</h3></div>
+          <div class="project-content">
+            <p>Reproducible stock research with immutable snapshots and purged walk-forward validation.</p>
+            <p class="stack"><span>Technologies</span> Python · DuckDB · Parquet · LightGBM</p>
+          </div>
+          <div class="project-actions">
+            <a class="source-link" href="https://github.com/DreamlandMX/Stock-Perdition-Research-" target="_blank" rel="noopener noreferrer">View source <img class="icon" src="assets/arrow-right.svg" alt=""><span class="sr-only"> for Stock Prediction (opens a new tab)</span></a>
+            <details>
+              <summary aria-label="Details about Stock Prediction">Details <img class="icon chevron" src="assets/chevron-down.svg" alt=""></summary>
+              <div class="project-details">
+                <p class="detail-label">My work</p>
+                <p>I built the research pipeline around immutable Parquet snapshots, a DuckDB catalog, point-in-time features, and model evaluation with purged walk-forward folds.</p>
+                <p class="detail-label">Research boundaries</p>
+                <p>The public repository includes deterministic offline demos using synthetic data. These check reproducibility and leakage controls; they do not establish predictive lift or future returns. The platform does not place orders.</p>
+                <p class="detail-label">How it connects</p>
+                <p>This project focuses on stock-specific data and validation, alongside the broader multi-market workflow in Quant Model.</p>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="project" aria-labelledby="quant-title">
+          <div class="project-heading"><span class="project-number" aria-hidden="true">02 /</span><h3 id="quant-title">Quant<br class="desktop-break"> Model</h3></div>
+          <div class="project-content">
+            <p>A local-first research platform connecting multi-market data, backtesting, APIs, and dashboards.</p>
+            <p class="stack"><span>Technologies</span> Python · Fastify · React · PostgreSQL</p>
+          </div>
+          <div class="project-actions">
+            <a class="source-link" href="https://github.com/DreamlandMX/NewQuantModel" target="_blank" rel="noopener noreferrer">View source <img class="icon" src="assets/arrow-right.svg" alt=""><span class="sr-only"> for Quant Model (opens a new tab)</span></a>
+            <details>
+              <summary aria-label="Details about Quant Model">Details <img class="icon chevron" src="assets/chevron-down.svg" alt=""></summary>
+              <div class="project-details">
+                <p class="detail-label">My work</p>
+                <p>I developed data ingestion, baseline signals, model overlays, and backtesting workflows for crypto, US equities, China A-shares, and benchmark indices, with a Fastify API and React interface for published research artifacts.</p>
+                <p class="detail-label">Research boundaries</p>
+                <p>Results depend on the ingested universe, data coverage, and validation period. Sample artifacts and historical backtests are research outputs, not evidence of live trading performance.</p>
+                <p class="detail-label">How it connects</p>
+                <p>The platform provides a broader multi-market workflow; Stock Prediction concentrates on reproducible stock experiments, while Options Heatmap explores options exposure visually.</p>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="project" aria-labelledby="options-title">
+          <div class="project-heading"><span class="project-number" aria-hidden="true">03 /</span><h3 id="options-title">Options<br class="desktop-break"> Heatmap</h3></div>
+          <div class="project-content">
+            <p>Strike-by-expiration heatmaps for gamma and estimated vanna exposure.</p>
+            <p class="stack"><span>Technologies</span> TypeScript · React · GEX · VEX</p>
+          </div>
+          <div class="project-actions">
+            <a class="source-link" href="https://github.com/DreamlandMX/Stock-Options-Heatmap" target="_blank" rel="noopener noreferrer">View source <img class="icon" src="assets/arrow-right.svg" alt=""><span class="sr-only"> for Options Heatmap (opens a new tab)</span></a>
+            <details>
+              <summary aria-label="Details about Options Heatmap">Details <img class="icon chevron" src="assets/chevron-down.svg" alt=""></summary>
+              <div class="project-details">
+                <p class="detail-label">My work</p>
+                <p>I built a React and TypeScript interface for options exposure by strike and expiration, with call/put breakdowns and inspectable inputs such as open interest, gamma, vanna, and implied volatility.</p>
+                <p class="detail-label">Research boundaries</p>
+                <p>The public default uses demo data. Live data requires an explicitly enabled local OpenD connection. When provider vanna is unavailable, VEX uses a Black-Scholes estimate; it is not a broker-certified measure.</p>
+                <p class="detail-label">How it connects</p>
+                <p>This is the options visualization component of my independent research toolkit. It does not execute trades or establish forecasting performance.</p>
+              </div>
+            </details>
+          </div>
+        </article>
+      </section>
+
+      <section id="about" class="background" aria-labelledby="about-title">
+        <div class="section-index" aria-hidden="true"><span>03</span><span>/</span><span>BACKGROUND</span></div>
+        <p class="eyebrow">Background</p>
+        <h2 id="about-title">Education, tools, and how I build.</h2>
+        <div class="background-grid">
+          <div class="education">
+            <h3 class="eyebrow">Education</h3>
+            <div class="education-entry"><h4>Drexel University</h4><p>M.S. Computer Science<br>Expected June 2028<br>Philadelphia</p></div>
+            <div class="education-entry"><h4>University of Mississippi</h4><p>B.S. Computer Science<br>May 2026</p></div>
+          </div>
+          <div class="practice">
+            <div class="tools"><h3 class="eyebrow">Tools I work with</h3><p>Python · SQL · TypeScript · React<br>FastAPI · DuckDB · PyTorch · LightGBM</p></div>
+            <div class="approach">
+              <h3 class="eyebrow">Engineering Approach</h3>
+              <dl>
+                <div><dt>Reproducible pipelines</dt><dd>Immutable snapshots and point-in-time data.</dd></div>
+                <div><dt>Careful validation</dt><dd>Purged walk-forward evaluation for forecasting models.</dd></div>
+                <div><dt>Connected systems</dt><dd>Data pipelines, APIs, and research interfaces.</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact" aria-labelledby="contact-title">
+        <div class="section-index" aria-hidden="true"><span>04</span><span>/</span><span>CONTACT</span></div>
+        <p class="eyebrow">Get in touch</p>
+        <h2 id="contact-title">Have a problem worth building for?</h2>
+        <p>Let's connect.</p>
+        <div class="contact-links">
+          <a class="source-link" href="mailto:yz936@drexel.edu">yz936@drexel.edu <img class="icon" src="assets/arrow-right.svg" alt=""></a>
+          <a class="source-link" href="https://github.com/DreamlandMX" target="_blank" rel="noopener noreferrer">GitHub <img class="icon" src="assets/arrow-right.svg" alt=""><span class="sr-only"> (opens a new tab)</span></a>
+          <a class="source-link" href="assets/resume.pdf" download="Youkai-Zhou-Resume.pdf">Download resume <img class="icon" src="assets/download.svg" alt=""><span class="sr-only"> (PDF)</span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><p>Youkai Zhou · Philadelphia</p><a class="initials" href="#intro" aria-label="Back to top">YZ</a></footer>
+  </div>
+</body>
+</html>
+

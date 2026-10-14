@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#111514">
   <title>Youkai Zhou — Software, Data &amp; Research</title>
   <link rel="icon" href="data:,">
+  <link rel="preload" as="image" href="assets/wave.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,7 +27,7 @@
     <main id="main" class="page-body">
       <section id="intro" class="hero" aria-labelledby="hero-title">
         <div class="section-index" aria-hidden="true"><span>01</span><span>/</span><span>INTRO</span></div>
-        <img class="hero-wave" src="assets/wave.png" alt="" width="1894" height="830" fetchpriority="high">
+        <canvas class="hero-wave" width="1894" height="830" aria-hidden="true"></canvas>
         <h1 id="hero-title">Build.<br>Investigate.</h1>
         <div class="hero-copy">
           <p class="intro-line">Youkai Zhou — Software, data, and research.</p>
@@ -148,6 +149,7 @@
     </main>
     <footer class="site-footer"><p>Youkai Zhou · Philadelphia</p><a class="initials" href="#intro" aria-label="Back to top">YZ</a></footer>
   </div>
+  <script src="wave.js"></script>
 </body>
 </html>
 

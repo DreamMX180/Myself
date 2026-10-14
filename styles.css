@@ -29,7 +29,7 @@ section { position: relative; border-bottom: 1px solid var(--rule); padding: 36p
 .section-index span:nth-child(-n+2) { color: var(--mint); }
 .section-index span:last-child { font-size: 11px; letter-spacing: .025em; }
 .hero { isolation: isolate; padding: 30px 0 26px; overflow: visible; }
-.hero-wave { position: absolute; z-index: -1; pointer-events: none; width: calc(100% + 40px); height: auto; left: -10px; top: -20px; }
+.hero-wave { position: absolute; z-index: -1; pointer-events: none; display: block; width: calc(100% + 40px); aspect-ratio: 1894 / 830; height: auto; left: -10px; top: -20px; }
 h1 { font-size: clamp(88px, 15.2vw, 220px); line-height: .88; font-weight: 700; letter-spacing: -.065em; }
 .hero-copy { position: relative; margin-top: 100px; }
 .intro-line { font-size: clamp(21px, 2vw, 28px); line-height: 1.35; letter-spacing: -.025em; }

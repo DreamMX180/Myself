@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Youkai Zhou builds software for quantitative research: an options exposure heatmap, reproducible stock prediction research, and a multi-market quant platform. M.S. Computer Science at Drexel University.">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta property="og:title" content="Youkai Zhou — Software &amp; quantitative research">
+  <meta property="og:description" content="Tools that make market data readable, and say plainly what they can't prove.">
+  <title>Youkai Zhou — Software &amp; quantitative research</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Special+Elite&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg class="grain" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .14 0"/></filter><rect width="100%" height="100%" filter="url(#grain)"/></svg>
+
+  <header class="masthead">
+    <nav class="nav-left" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#ledger">Timeline</a>
+    </nav>
+    <a class="wordmark" href="#top" aria-label="Youkai Zhou, back to top">Youkai<br>Zhou</a>
+    <nav class="nav-right" aria-label="More">
+      <a href="#contact">Contact</a>
+      <a href="assets/resume.pdf" download="Youkai-Zhou-Resume.pdf">Resume</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero" aria-labelledby="hero-caption">
+      <span class="reg r1" aria-hidden="true"></span><span class="reg r2" aria-hidden="true"></span>
+      <svg class="tape" id="tape" viewBox="0 0 1500 560" aria-hidden="true">
+        <defs>
+          <filter id="tape-shadow" x="-5%" y="-20%" width="110%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-opacity=".16"/></filter>
+          <path id="tape-path" d="M-60 420 C 220 420, 300 120, 560 140 S 880 470, 1080 360 S 1300 90, 1580 160"/>
+        </defs>
+        <use href="#tape-path" class="tape-paper" filter="url(#tape-shadow)"/>
+        <use href="#tape-path" class="tape-edge"/>
+        <use href="#tape-path" class="tape-face"/>
+        <text class="tape-text" dy="7"><textPath id="tape-text" href="#tape-path" startOffset="0"></textPath></text>
+      </svg>
+      <div class="hero-caption">
+        <p id="hero-caption">The tape so far — 2022 — 2028</p>
+        <nav class="tape-links" aria-label="Ticker tape chapters">
+          <a href="#quant">Quant Model</a>
+          <a href="#stock">Stock Prediction</a>
+          <a href="#options">Options Heatmap</a>
+          <a href="#ledger">Timeline</a>
+        </nav>
+        <button id="tape-toggle" type="button" hidden>Pause tape</button>
+      </div>
+      <div class="hero-foot">
+        <p><b>Software &amp; quantitative research.</b> I build tools that make market data readable, and say plainly what they can't prove.</p>
+        <p class="mono">M.S. CS — Drexel<br>Philadelphia, PA</p>
+      </div>
+    </section>
+
+    <section class="manifesto" aria-label="Approach">
+      <p class="statement">Most charts tell you what happened.<a class="fn" href="#n1" id="r1">1</a><br>I build the ones that also tell you <em>what they can’t prove.</em><a class="fn" href="#n2" id="r2">2</a></p>
+      <ol class="marginalia">
+        <li id="n1"><span>1</span>Options exposure, multi-market backtests, and stock prediction research, each built end to end on my own.</li>
+        <li id="n2"><span>2</span>465 tests, 72 preregistered trials, and a written note on the limits of every result.</li>
+      </ol>
+    </section>
+
+    <section id="work" class="work" aria-labelledby="work-title">
+      <header class="section-head">
+        <p class="kicker">Selected work</p>
+        <h2 id="work-title">Three projects</h2>
+      </header>
+
+      <article id="options" class="entry" aria-labelledby="options-title">
+        <p class="entry-no">01</p>
+        <div class="entry-main">
+          <h3 id="options-title">Options Heatmap</h3>
+          <p class="meta">Sole full-stack developer — Dec 2024 — present</p>
+          <p class="lede">Gamma and vanna exposure mapped across every strike and expiration for SPY, QQQ, IWM, and mega-cap tech, so the key gamma levels can be read at a glance.</p>
+        </div>
+        <div class="entry-side">
+          <ul class="points">
+            <li>React and TypeScript interface with a Node API that reads moomoo OpenD option chains and falls back to demo data automatically.</li>
+            <li>GEX per 1% move from gamma, open interest, and spot price, netting call and put exposure by strike.</li>
+            <li>Black-Scholes vanna estimate when providers omit it, covered by Vitest unit tests.</li>
+          </ul>
+          <p class="stack">TypeScript — React — Node.js — Vitest</p>
+          <p class="note"><span>Note</span>Demo data by default; live data needs a local OpenD connection enabled explicitly. Estimated VEX is not broker-certified. It places no trades.</p>
+          <a class="link" href="https://github.com/DreamlandMX/Stock-Options-Heatmap" target="_blank" rel="noopener noreferrer">View source →<span class="sr-only"> (opens a new tab)</span></a>
+        </div>
+      </article>
+
+      <article id="stock" class="entry" aria-labelledby="stock-title">
+        <p class="entry-no">02</p>
+        <div class="entry-main">
+          <h3 id="stock-title">Stock Prediction Research</h3>
+          <p class="meta">Sole backend &amp; machine learning developer — Aug 2024 — present</p>
+          <p class="lede">A stock prediction platform built so every experiment can be replayed exactly and no feature ever sees the future.</p>
+          <dl class="figures"><div><dt>465</dt><dd>pytest tests</dd></div><div><dt>72</dt><dd>preregistered trials</dd></div></dl>
+        </div>
+        <div class="entry-side">
+          <ul class="points">
+            <li>Market data stored as immutable Parquet snapshots in a DuckDB catalog, making every experiment reproducible.</li>
+            <li>LightGBM and baseline models run on purged walk-forward folds, with leakage audits keeping features point-in-time.</li>
+            <li>A read-only FastAPI service so every pipeline stage can be inspected and verified.</li>
+          </ul>
+          <p class="stack">Python — DuckDB — Parquet — LightGBM — FastAPI</p>
+          <p class="note"><span>Note</span>Public demos use synthetic data. They test reproducibility and leakage controls, not predictive lift or returns. No orders are placed.</p>
+          <a class="link" href="https://github.com/DreamlandMX/Stock-Perdition-Research-" target="_blank" rel="noopener noreferrer">View source →<span class="sr-only"> (opens a new tab)</span></a>
+        </div>
+      </article>
+
+      <article id="quant" class="entry" aria-labelledby="quant-title">
+        <p class="entry-no">03</p>
+        <div class="entry-main">
+          <h3 id="quant-title">Quant Model</h3>
+          <p class="meta">Sole full-stack developer — Jun 2022 — present</p>
+          <p class="lede">A local-first research platform that carries multi-market data from ingestion through signals and backtests to a dashboard.</p>
+          <dl class="figures"><div><dt>5 yrs</dt><dd>of history</dd></div><div><dt>4</dt><dd>market universes</dd></div><div><dt>10</dt><dd>trading signals</dd></div></dl>
+        </div>
+        <div class="entry-side">
+          <ul class="points">
+            <li>S&amp;P 500, Nasdaq 100, CSI 300, and crypto data ingested in Python, enabling cross-market research.</li>
+            <li>Signals including RSI and MACD, with LightGBM ranking to surface top stocks.</li>
+            <li>Backtests published through PostgreSQL, Fastify APIs, and React dashboards; a worker refreshes crypto every 4 hours and equities daily.</li>
+          </ul>
+          <p class="stack">Python — PostgreSQL — Fastify — React — Docker</p>
+          <p class="note"><span>Note</span>Results depend on the universe, data coverage, and test period. Backtests are research output, not evidence of live performance.</p>
+          <a class="link" href="https://github.com/DreamlandMX/NewQuantModel" target="_blank" rel="noopener noreferrer">View source →<span class="sr-only"> (opens a new tab)</span></a>
+        </div>
+      </article>
+    </section>
+
+    <section id="ledger" class="ledger" aria-labelledby="ledger-title">
+      <header class="section-head">
+        <p class="kicker">Timeline</p>
+        <h2 id="ledger-title">The ledger</h2>
+      </header>
+      <ol class="rows">
+        <li><time>Jun 2022</time><div><h3>Quant Model begins</h3><p>First version of the multi-market research platform.</p></div><span class="tag">Project</span></li>
+        <li><time>Fall 2022</time><div><h3>Dean's Honor Roll</h3><p>University of Mississippi</p></div><span class="tag">Honor</span></li>
+        <li><time>Apr 2023</time><div><h3>3rd Place, Ole Miss Hackathon Beta</h3><p>C Spire Network Optimization — University of Mississippi</p></div><span class="tag">Award</span></li>
+        <li><time>Apr 2024</time><div><h3>2nd Place, Ole Miss Hackathon</h3><p>AI Course-Planning Advisor — University of Mississippi</p></div><span class="tag">Award</span></li>
+        <li><time>Jun — Jul 2024</time><div><h3>Student Researcher, HPC Summer Institute</h3><p>Jackson State University — Jackson, MS</p>
+          <ul class="points">
+            <li>Ran computational fluid dynamics simulations on a Linux HPC cluster, comparing flow across parameter settings.</li>
+            <li>Analyzed output with Python and NumPy, visualizing velocity and pressure fields for team review.</li>
+            <li>Applied parallel computing methods to scale runs beyond single-machine capacity.</li>
+          </ul></div><span class="tag">Research</span></li>
+        <li><time>Aug 2024</time><div><h3>Stock Prediction Research begins</h3><p>Reproducible experiments and leakage-safe validation.</p></div><span class="tag">Project</span></li>
+        <li><time>Dec 2024</time><div><h3>Options Heatmap begins</h3><p>Gamma and vanna exposure, strike by expiration.</p></div><span class="tag">Project</span></li>
+        <li><time>May 2026</time><div><h3>B.S. Computer Science</h3><p>University of Mississippi — GPA 3.5 / 4.0 — Oxford, MS</p><p class="soft">Honors: Dean's List</p><p class="soft">Coursework: Machine Learning, Database Systems, Data Structures &amp; Algorithms, Software Engineering</p></div><span class="tag">Degree</span></li>
+        <li><time>Jun 2028</time><div><h3>M.S. Computer Science</h3><p>Drexel University — Philadelphia, PA — expected</p></div><span class="tag">Degree</span></li>
+      </ol>
+    </section>
+
+    <section class="toolbox" aria-labelledby="toolbox-title">
+      <header class="section-head">
+        <p class="kicker">Toolbox</p>
+        <h2 id="toolbox-title">What I build with</h2>
+      </header>
+      <dl class="tools">
+        <div><dt>Languages</dt><dd>Python, TypeScript, JavaScript, SQL, Java, C++</dd></div>
+        <div><dt>Machine learning</dt><dd>LightGBM, scikit-learn, pandas, NumPy, walk-forward validation</dd></div>
+        <div><dt>Web</dt><dd>React, Node.js, FastAPI, Fastify</dd></div>
+        <div><dt>Data</dt><dd>PostgreSQL, DuckDB, Parquet, Redis, SQLite</dd></div>
+        <div><dt>Developer tools</dt><dd>Git, Linux, Docker, AWS EC2</dd></div>
+        <div><dt>Spoken</dt><dd>English (fluent), Mandarin (native)</dd></div>
+      </dl>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <p class="kicker">Contact</p>
+      <h2 id="contact-title">Have a problem worth building for?</h2>
+      <a class="mail" href="mailto:youkaizhou1@gmail.com">youkaizhou1@gmail.com</a>
+      <ul class="contact-links">
+        <li><a class="link" href="https://github.com/DreamlandMX" target="_blank" rel="noopener noreferrer">GitHub →<span class="sr-only"> (opens a new tab)</span></a></li>
+        <li><a class="link" href="assets/resume.pdf" download="Youkai-Zhou-Resume.pdf">Resume (PDF) →</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="reg r3" aria-hidden="true"></span><span class="reg r4" aria-hidden="true"></span>
+    <p class="mono">© 2026 Youkai Zhou</p>
+    <svg class="seal" id="seal" viewBox="-280 -280 560 560" role="img" aria-label="Guilloche seal with the initials YZ"></svg>
+    <p class="mono">No trades placed — Made in Philadelphia</p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

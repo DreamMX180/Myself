@@ -5,13 +5,13 @@
   // ---------- Ticker tape ----------
   // Each mark on the tape links to the part of the page it describes.
   var MARKS = [
-    ["JUN 2022", "QUANT MODEL", "#quant"],
     ["APR 2023", "HACKATHON 3RD", "#ledger"],
     ["APR 2024", "HACKATHON 2ND", "#ledger"],
     ["JUN 2024", "HPC INSTITUTE", "#ledger"],
-    ["AUG 2024", "STOCK PREDICTION — 465 TESTS", "#stock"],
-    ["DEC 2024", "OPTIONS HEATMAP", "#options"],
+    ["AUG 2024", "STOCK PREDICTION", "#stock"],
     ["MAY 2026", "B.S. CS", "#ledger"],
+    ["OCT 2026", "OPENNOTE v0.1.0", "#opennote"],
+    ["NOV 2026", "UNINSTALLPRO", "#uninstall"],
     ["2028", "M.S. CS — DREXEL", "#ledger"]
   ];
   var textPath = document.getElementById("tape-text");

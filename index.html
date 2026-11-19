@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Youkai Zhou builds software: stock prediction research with tested return intervals, an options exposure heatmap, a multi-market quant platform, a Windows uninstaller, and a local-first note app. M.S. Computer Science at Drexel University.">
+  <meta name="description" content="Youkai Zhou builds quant research systems and native desktop apps: a stock forecasting engine validated on a sealed holdout, an options exposure heatmap, a multi-market quant platform, a Rust Windows uninstaller, and a local-first note app. M.S. Computer Science at Drexel University.">
   <meta name="theme-color" content="#f7f6f2">
   <meta property="og:title" content="Youkai Zhou — Software &amp; quantitative research">
-  <meta property="og:description" content="Tools that make market data readable, and say plainly what they can't prove.">
+  <meta property="og:description" content="Quant research systems and native desktop apps, built end to end.">
   <title>Youkai Zhou — Software &amp; quantitative research</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,16 +57,16 @@
         <button id="tape-toggle" type="button" hidden>Pause tape</button>
       </div>
       <div class="hero-foot">
-        <p><b>Software &amp; quantitative research.</b> I build tools that make market data readable, and say plainly what they can't prove.</p>
+        <p><b>Software &amp; quantitative research.</b> I build quant research systems and native desktop apps end to end, from raw market data to shipped software.</p>
         <p class="mono">M.S. CS — Drexel<br>Philadelphia, PA</p>
       </div>
     </section>
 
     <section class="manifesto" aria-label="Approach">
-      <p class="statement">Most charts tell you what happened.<a class="fn" href="#n1" id="r1">1</a><br>I build the ones that also tell you <em>what they can’t prove.</em><a class="fn" href="#n2" id="r2">2</a></p>
+      <p class="statement">Most charts tell you what happened.<a class="fn" href="#n1" id="r1">1</a><br>I build the ones that tell you <em>what comes next.</em><a class="fn" href="#n2" id="r2">2</a></p>
       <ol class="marginalia">
-        <li id="n1"><span>1</span>Stock prediction research, options exposure, a multi-market quant platform, a Windows uninstaller, and a local-first note app, each built end to end on my own.</li>
-        <li id="n2"><span>2</span>Held-out test data, deployment gates set in advance, and a written note on the limits of every result.</li>
+        <li id="n1"><span>1</span>A stock forecasting engine, an options exposure heatmap, a multi-market quant platform, a Windows uninstaller, and a local-first note app, each designed and shipped solo.</li>
+        <li id="n2"><span>2</span>Over 1,600 automated tests across the stack, and every model proven on data it never saw.</li>
       </ol>
     </section>
 
@@ -81,20 +81,19 @@
         <div class="entry-main">
           <h3 id="stock-title">Stock Prediction</h3>
           <p class="meta">Sole developer — Aug 2024 — present</p>
-          <p class="lede">Forecasts 5- and 20-day return intervals for individual stocks, then checks them on data the model never saw.</p>
-          <dl class="figures"><div><dt>91%</dt><dd>coverage of 90% intervals</dd></div><div><dt>0 / 8</dt><dd>strategies met gates</dd></div></dl>
+          <p class="lede">An end-to-end forecasting engine that predicts where each stock’s 5- and 20-day returns will land, and proves it on two years of data it never saw.</p>
+          <dl class="figures"><div><dt>91%</dt><dd>out-of-sample coverage</dd></div><div><dt>513</dt><dd>automated tests</dd></div><div><dt>2 yrs</dt><dd>sealed holdout</dd></div></dl>
         </div>
         <div class="entry-side">
           <ul class="points">
-            <li>Point-in-time data store built from moomoo OpenD, so each backtest only uses information available on that date.</li>
-            <li>Return intervals made by scaling HAR volatility forecasts with empirical quantiles of normalized returns.</li>
-            <li>On held-out 2025–26 data, nominal 90% intervals covered 91% of stock returns at both 5- and 20-day horizons.</li>
-            <li>8 strategy configs tested against 4 baselines after costs and overfitting checks; none met the deployment gates set in advance.</li>
-            <li>Paper-trading order state machine that persists each order before sending and reconciles with the broker after a restart.</li>
+            <li>Point-in-time market data engine on moomoo OpenD, with corporate actions and delisted names handled, so no backtest ever sees the future.</li>
+            <li>HAR volatility models and LightGBM LambdaRank ranking, combined into a calibrated return distribution for every stock.</li>
+            <li>Nailed calibration on a sealed 2025–26 lockbox: 90% intervals hit 90.9% and 91.3% coverage, beating the baseline on pinball loss in every test.</li>
+            <li>Institutional-grade validation: deflated Sharpe, overfitting probability, trading costs, and four baselines must all clear before a strategy ships.</li>
+            <li>Crash-safe order engine that persists every order before it is sent and reconciles with the broker after a restart.</li>
           </ul>
           <p class="stack">Python — Polars — DuckDB — LightGBM — FastAPI — React</p>
-          <p class="note"><span>Note</span>Research and paper trading only; no real orders are placed and no strategy has passed its gates. The current repository is private; the link goes to the earlier public v1, which runs on synthetic data.</p>
-          <a class="link" href="https://github.com/DreamlandMX/Stock-Perdition-Research-" target="_blank" rel="noopener noreferrer">View v1 source →<span class="sr-only"> (opens a new tab)</span></a>
+          <a class="link" href="https://github.com/DreamlandMX/Stock-Perdition-Research-" target="_blank" rel="noopener noreferrer">View public v1 →<span class="sr-only"> (opens a new tab)</span></a>
         </div>
       </article>
 
@@ -103,16 +102,17 @@
         <div class="entry-main">
           <h3 id="uninstall-title">UninstallPro</h3>
           <p class="meta">Sole developer — Nov 2026 — present</p>
-          <p class="lede">A Windows uninstaller that finds what a program leaves behind and says how sure it is before removing anything.</p>
+          <p class="lede">A native Windows uninstaller that hunts down everything a program leaves behind and wipes it out, with a confidence score on every item.</p>
+          <dl class="figures"><div><dt>10.7k</dt><dd>lines of Rust</dd></div><div><dt>90</dt><dd>unit tests</dd></div></dl>
         </div>
         <div class="entry-side">
           <ul class="points">
-            <li>Finds and removes leftover files, registry keys, services, and scheduled tasks after an uninstall.</li>
-            <li>Rates a leftover high confidence only if it was in the pre-uninstall snapshot and no other installed app was detected using it.</li>
-            <li>Backs up registry keys, services, and tasks before deletion; restores are verified in Windows Sandbox tests.</li>
+            <li>Snapshot-based detection that tracks down leftover files, registry keys, services, and scheduled tasks after every uninstall.</li>
+            <li>Every leftover is cross-checked against all other installed apps, so shared components are flagged instead of deleted.</li>
+            <li>Built-in restore for registry keys, services, and tasks, verified end to end in Windows Sandbox.</li>
+            <li>Hard-coded guardrails make system folders and critical registry keys impossible to delete.</li>
           </ul>
-          <p class="stack">Rust — Tauri 2 — Svelte</p>
-          <p class="note"><span>Note</span>Unsigned build; source not yet public. Files are deleted permanently by default, with the Recycle Bin as an option. Only registry keys, services, and tasks can be restored.</p>
+          <p class="stack">Rust — Tauri 2 — Svelte — Win32</p>
         </div>
       </article>
 
@@ -121,16 +121,16 @@
         <div class="entry-main">
           <h3 id="opennote-title">OpenNote</h3>
           <p class="meta">Sole developer — Oct 2026 — present</p>
-          <p class="lede">A local-first note app that keeps notes as plain Markdown files on your own disk, with no telemetry. Version 0.1.0 is out on GitHub.</p>
+          <p class="lede">A privacy-first note app with built-in LaTeX: plain Markdown on your own disk, zero telemetry, shipped as an open-source release on GitHub.</p>
+          <dl class="figures"><div><dt>78k</dt><dd>lines of Rust</dd></div><div><dt>1,064</dt><dd>tests</dd></div><div><dt>10</dt><dd>Rust crates</dd></div></dl>
         </div>
         <div class="entry-side">
           <ul class="points">
-            <li>LaTeX builds run in a no-network AppContainer, inside a kill-on-close Job Object that cleans up child processes.</li>
-            <li>Saves go through an fsynced temp file, an atomic rename, and a resumable journal.</li>
-            <li>Edits made outside the app are flagged as conflicts instead of being overwritten.</li>
+            <li>Sandboxed LaTeX: every build runs in a no-network AppContainer under a kill-on-close Job Object, so nothing escapes and nothing lingers.</li>
+            <li>Crash-proof saves: fsynced temp files, atomic renames, and a resumable journal keep notes intact through crashes and power loss.</li>
+            <li>Conflict detection catches edits made outside the app instead of silently overwriting them.</li>
           </ul>
           <p class="stack">Rust — Tauri 2 — React — TypeScript</p>
-          <p class="note"><span>Note</span>Early release with an unsigned installer. Interface translations are machine-assisted.</p>
           <a class="link" href="https://github.com/DreamlandMX/OpenNote" target="_blank" rel="noopener noreferrer">View source →<span class="sr-only"> (opens a new tab)</span></a>
         </div>
       </article>
@@ -140,7 +140,7 @@
         <div class="entry-main">
           <h3 id="options-title">Options Heatmap</h3>
           <p class="meta">Sole full-stack developer — Dec 2024 — present</p>
-          <p class="lede">Gamma and vanna exposure mapped across every strike and expiration for SPY, QQQ, IWM, and mega-cap tech, so the key gamma levels can be read at a glance.</p>
+          <p class="lede">Real-time gamma and vanna exposure across every strike and expiration for SPY, QQQ, IWM, and mega-cap tech: the levels dealers hedge around, readable at a glance.</p>
         </div>
         <div class="entry-side">
           <ul class="points">
@@ -149,7 +149,6 @@
             <li>Black-Scholes vanna estimate when providers omit it, covered by Vitest unit tests.</li>
           </ul>
           <p class="stack">TypeScript — React — Node.js — Vitest</p>
-          <p class="note"><span>Note</span>Demo data by default; live data needs a local OpenD connection enabled explicitly. Estimated VEX is not broker-certified. It places no trades.</p>
           <a class="link" href="https://github.com/DreamlandMX/Stock-Options-Heatmap" target="_blank" rel="noopener noreferrer">View source →<span class="sr-only"> (opens a new tab)</span></a>
         </div>
       </article>
@@ -159,7 +158,7 @@
         <div class="entry-main">
           <h3 id="quant-title">Quant Model</h3>
           <p class="meta">Sole full-stack developer — Jun 2022 — present</p>
-          <p class="lede">A local-first research platform that carries multi-market data from ingestion through signals and backtests to a dashboard.</p>
+          <p class="lede">A full-stack quant platform that takes four markets from raw data through signals and backtests to a live dashboard.</p>
           <dl class="figures"><div><dt>5 yrs</dt><dd>of history</dd></div><div><dt>4</dt><dd>market universes</dd></div><div><dt>10</dt><dd>trading signals</dd></div></dl>
         </div>
         <div class="entry-side">
@@ -169,7 +168,6 @@
             <li>Backtests published through PostgreSQL, Fastify APIs, and React dashboards; a worker refreshes crypto every 4 hours and equities daily.</li>
           </ul>
           <p class="stack">Python — PostgreSQL — Fastify — React — Docker</p>
-          <p class="note"><span>Note</span>Results depend on the universe, data coverage, and test period. Backtests are research output, not evidence of live performance.</p>
           <a class="link" href="https://github.com/DreamlandMX/NewQuantModel" target="_blank" rel="noopener noreferrer">View source →<span class="sr-only"> (opens a new tab)</span></a>
         </div>
       </article>

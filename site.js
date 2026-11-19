@@ -5,10 +5,12 @@
   // ---------- Ticker tape ----------
   // Each mark on the tape links to the part of the page it describes.
   var MARKS = [
+    ["JUN 2022", "QUANT MODEL", "#quant"],
     ["APR 2023", "HACKATHON 3RD", "#ledger"],
     ["APR 2024", "HACKATHON 2ND", "#ledger"],
     ["JUN 2024", "HPC INSTITUTE", "#ledger"],
     ["AUG 2024", "STOCK PREDICTION", "#stock"],
+    ["DEC 2024", "OPTIONS HEATMAP", "#options"],
     ["MAY 2026", "B.S. CS", "#ledger"],
     ["OCT 2026", "OPENNOTE v0.1.0", "#opennote"],
     ["NOV 2026", "UNINSTALLPRO", "#uninstall"],

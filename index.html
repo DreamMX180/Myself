@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Youkai Zhou builds software: stock prediction research with tested return intervals, a Windows uninstaller, and a local-first note app. M.S. Computer Science at Drexel University.">
+  <meta name="description" content="Youkai Zhou builds software: stock prediction research with tested return intervals, an options exposure heatmap, a multi-market quant platform, a Windows uninstaller, and a local-first note app. M.S. Computer Science at Drexel University.">
   <meta name="theme-color" content="#f7f6f2">
   <meta property="og:title" content="Youkai Zhou — Software &amp; quantitative research">
   <meta property="og:description" content="Tools that make market data readable, and say plainly what they can't prove.">
@@ -45,11 +45,13 @@
         <text class="tape-text" dy="7"><textPath id="tape-text" href="#tape-path" startOffset="0"></textPath></text>
       </svg>
       <div class="hero-caption">
-        <p id="hero-caption">The tape so far — 2023 — 2028</p>
+        <p id="hero-caption">The tape so far — 2022 — 2028</p>
         <nav class="tape-links" aria-label="Ticker tape chapters">
           <a href="#stock">Stock Prediction</a>
           <a href="#uninstall">UninstallPro</a>
           <a href="#opennote">OpenNote</a>
+          <a href="#options">Options Heatmap</a>
+          <a href="#quant">Quant Model</a>
           <a href="#ledger">Timeline</a>
         </nav>
         <button id="tape-toggle" type="button" hidden>Pause tape</button>
@@ -63,7 +65,7 @@
     <section class="manifesto" aria-label="Approach">
       <p class="statement">Most charts tell you what happened.<a class="fn" href="#n1" id="r1">1</a><br>I build the ones that also tell you <em>what they can’t prove.</em><a class="fn" href="#n2" id="r2">2</a></p>
       <ol class="marginalia">
-        <li id="n1"><span>1</span>Stock prediction research, a Windows uninstaller, and a local-first note app, each built end to end on my own.</li>
+        <li id="n1"><span>1</span>Stock prediction research, options exposure, a multi-market quant platform, a Windows uninstaller, and a local-first note app, each built end to end on my own.</li>
         <li id="n2"><span>2</span>Held-out test data, deployment gates set in advance, and a written note on the limits of every result.</li>
       </ol>
     </section>
@@ -71,7 +73,7 @@
     <section id="work" class="work" aria-labelledby="work-title">
       <header class="section-head">
         <p class="kicker">Selected work</p>
-        <h2 id="work-title">Three projects</h2>
+        <h2 id="work-title">Five projects</h2>
       </header>
 
       <article id="stock" class="entry" aria-labelledby="stock-title">
@@ -132,6 +134,45 @@
           <a class="link" href="https://github.com/DreamlandMX/OpenNote" target="_blank" rel="noopener noreferrer">View source →<span class="sr-only"> (opens a new tab)</span></a>
         </div>
       </article>
+
+      <article id="options" class="entry" aria-labelledby="options-title">
+        <p class="entry-no">04</p>
+        <div class="entry-main">
+          <h3 id="options-title">Options Heatmap</h3>
+          <p class="meta">Sole full-stack developer — Dec 2024 — present</p>
+          <p class="lede">Gamma and vanna exposure mapped across every strike and expiration for SPY, QQQ, IWM, and mega-cap tech, so the key gamma levels can be read at a glance.</p>
+        </div>
+        <div class="entry-side">
+          <ul class="points">
+            <li>React and TypeScript interface with a Node API that reads moomoo OpenD option chains and falls back to demo data automatically.</li>
+            <li>GEX per 1% move from gamma, open interest, and spot price, netting call and put exposure by strike.</li>
+            <li>Black-Scholes vanna estimate when providers omit it, covered by Vitest unit tests.</li>
+          </ul>
+          <p class="stack">TypeScript — React — Node.js — Vitest</p>
+          <p class="note"><span>Note</span>Demo data by default; live data needs a local OpenD connection enabled explicitly. Estimated VEX is not broker-certified. It places no trades.</p>
+          <a class="link" href="https://github.com/DreamlandMX/Stock-Options-Heatmap" target="_blank" rel="noopener noreferrer">View source →<span class="sr-only"> (opens a new tab)</span></a>
+        </div>
+      </article>
+
+      <article id="quant" class="entry" aria-labelledby="quant-title">
+        <p class="entry-no">05</p>
+        <div class="entry-main">
+          <h3 id="quant-title">Quant Model</h3>
+          <p class="meta">Sole full-stack developer — Jun 2022 — present</p>
+          <p class="lede">A local-first research platform that carries multi-market data from ingestion through signals and backtests to a dashboard.</p>
+          <dl class="figures"><div><dt>5 yrs</dt><dd>of history</dd></div><div><dt>4</dt><dd>market universes</dd></div><div><dt>10</dt><dd>trading signals</dd></div></dl>
+        </div>
+        <div class="entry-side">
+          <ul class="points">
+            <li>S&amp;P 500, Nasdaq 100, CSI 300, and crypto data ingested in Python, enabling cross-market research.</li>
+            <li>Signals including RSI and MACD, with LightGBM ranking to surface top stocks.</li>
+            <li>Backtests published through PostgreSQL, Fastify APIs, and React dashboards; a worker refreshes crypto every 4 hours and equities daily.</li>
+          </ul>
+          <p class="stack">Python — PostgreSQL — Fastify — React — Docker</p>
+          <p class="note"><span>Note</span>Results depend on the universe, data coverage, and test period. Backtests are research output, not evidence of live performance.</p>
+          <a class="link" href="https://github.com/DreamlandMX/NewQuantModel" target="_blank" rel="noopener noreferrer">View source →<span class="sr-only"> (opens a new tab)</span></a>
+        </div>
+      </article>
     </section>
 
     <section id="ledger" class="ledger" aria-labelledby="ledger-title">
@@ -140,6 +181,7 @@
         <h2 id="ledger-title">The ledger</h2>
       </header>
       <ol class="rows">
+        <li><time>Jun 2022</time><div><h3>Quant Model begins</h3><p>First version of the multi-market research platform.</p></div><span class="tag">Project</span></li>
         <li><time>Apr 2023</time><div><h3>3rd Place, Ole Miss Hackathon Beta</h3><p>C Spire Network Optimization — University of Mississippi</p></div><span class="tag">Award</span></li>
         <li><time>Apr 2024</time><div><h3>2nd Place, Ole Miss Hackathon</h3><p>AI Course-Planning Advisor — University of Mississippi</p></div><span class="tag">Award</span></li>
         <li><time>Jun — Jul 2024</time><div><h3>Student Researcher, HPC Summer Institute</h3><p>Jackson State University — Jackson, MS</p>
@@ -148,6 +190,7 @@
             <li>Analyzed output with Python and NumPy, visualizing velocity and pressure fields for team review.</li>
           </ul></div><span class="tag">Research</span></li>
         <li><time>Aug 2024</time><div><h3>Stock Prediction begins</h3><p>Point-in-time data, return intervals, and held-out testing.</p></div><span class="tag">Project</span></li>
+        <li><time>Dec 2024</time><div><h3>Options Heatmap begins</h3><p>Gamma and vanna exposure, strike by expiration.</p></div><span class="tag">Project</span></li>
         <li><time>May 2026</time><div><h3>B.S. Computer Science</h3><p>University of Mississippi — GPA 3.5 / 4.0 — Oxford, MS</p><p class="soft">Coursework: Machine Learning, Database Systems, Data Structures &amp; Algorithms, Software Engineering</p></div><span class="tag">Degree</span></li>
         <li><time>Oct 2026</time><div><h3>OpenNote begins</h3><p>Local-first Markdown notes; v0.1.0 released on GitHub in Nov 2026.</p></div><span class="tag">Project</span></li>
         <li><time>Nov 2026</time><div><h3>UninstallPro begins</h3><p>Windows leftover cleanup with confidence ratings and backups.</p></div><span class="tag">Project</span></li>
